@@ -8,15 +8,29 @@ use App\Picture;
 
 class Places extends Controller
 {
-  public function ShowPlaces() {
+  public function index() {
     $places = Place::all();
-    return view('places', compact('places'));
+    return view('places_index', compact('places'));
   }
 
-  public function AddPlace() {
-    $place = new Place;
-    $place->title = "Африка";
-    $place->type = "Отдых";
-    $place->save();
+  public function show(Place $id) {
+    return view('places_show', compact('id'));
+  }
+
+  public function create() {
+    return view('places_create');
+  }
+
+  public function store() {
+  $place = new Place;
+  $place->title = request('title');
+  $place->type = request('type');
+  $place->save();
+  return redirect('places');
+  }
+
+  public function delete(Place $id) {
+    Place::destroy($id->id);
+    return redirect('places');
   }
 }

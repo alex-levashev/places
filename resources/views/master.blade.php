@@ -2,60 +2,21 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <title>My favourite places - @yield('title')</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
-
-        <!-- Styles -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                margin: 0;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-        </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            <div class="content">
-              <div class="title m-b-md">
-                @yield('title')
-              </div>
-              @yield('content')
-            </div>
+      <div class="page-header"><h1 class='text-center'>@yield('title')<h1></div>
+      <div class="content">
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-10">@yield('content')</div>
+          <div class="col-sm-1"></div>
         </div>
+      </div>
     </body>
 </html>
