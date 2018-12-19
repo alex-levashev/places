@@ -10,7 +10,8 @@ class Places extends Controller
 {
   public function index() {
     $places = Place::all();
-    return view('places_index', compact('places'));
+    $pictures = Picture::all();
+    return view('places_index', compact('places', 'pictures'));
   }
 
   public function show(Place $id) {

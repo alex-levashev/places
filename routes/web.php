@@ -19,5 +19,7 @@ Route::get('/places/{id}', 'Places@show');
 Route::get('/places/{id}/delete', 'Places@delete');
 Route::post('/places', 'Places@store');
 Route::get('/places/{id}/pictures/add', 'Pictures@add');
+Route::get('/places/{id}/pictures', 'Pictures@show');
+Route::post('/places/{id}/pictures', 'Pictures@store')->name('picture_add');
 // Route::get('add_place', 'Places@AddPlace');
 // Route::get('/add_place', function () { return view('add_place'); });

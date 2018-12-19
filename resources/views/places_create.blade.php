@@ -1,7 +1,7 @@
 @section('title', 'Add place')
 
 @section('content')
-<h2>Add a game</h2>
+<h2>Add a place</h2>
 
 <form method="post" action="/places" enctype="multipart/form-data">
   {{ csrf_field() }}
